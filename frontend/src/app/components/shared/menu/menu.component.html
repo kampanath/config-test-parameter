@@ -1,0 +1,168 @@
+<style>
+    .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+    .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+        background-color: #ff8801;
+    }
+
+    @media screen and (max-width:1500px) {   
+
+        #mainNav {
+            display:none;
+        }
+
+    }
+</style>
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4" id="mainNav" style="background-color: rgb(7, 57, 90);">
+    <div class="sidebar">
+        <img width="230px" height="80px" id="logo" src="assets/images/image18.png" class="img-fluid" alt="profile" style="margin-top: 1rem;"> 
+
+       <!-- <img width="230px" height="80px" id="logo" src="assets/images/iridium-logo2.png" class="img-fluid" alt="profile" style="margin-top: 1rem;"> --> 
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">MAIN NAVIGATION</li>
+
+                <!--   
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/stock']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-cubes"></i>
+                        <p>
+                            Stock
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/shop']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-shopping-basket"></i>
+                        <p>
+                            Shop
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+
+                 -->
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/stock/TbUutname']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>
+                            Non-ATE Profile
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ProfileATE']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>
+                             ATE Profile 
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/sn']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-money-bill"></i>
+                        <p>
+                             CMA Serial Number
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/IMEI/Product']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>
+                            SN And IMEI Edit
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/AddIMEI']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>
+                            IMEI Import
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/stock/tbEquipment']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-inbox"></i>
+                        <p>
+                            Equipment Edit MSSQL
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/goldBoard']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Gold Boards
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/fixture']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Fixture Config
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/model']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Board/Module,model
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/fw']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            FW
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/EquipmentCal']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Equipment Edit MySQL
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ATECalibration']" routerLinkActive="active">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            ATE Calibration
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" (click)="logout()">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>
+                            Log out
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+

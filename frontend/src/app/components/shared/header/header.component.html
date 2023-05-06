@@ -1,0 +1,247 @@
+<!-- 
+<nav> 
+  <div>
+    Web GUI for Iridium Production Test
+  </div>
+
+  <div>
+   
+    <ul>
+      <li>
+        <a  data-widget="pushmenu"></a>
+      </li>
+    
+      
+      <li>
+       
+        <a>User : admin</a>
+      </li>
+      <li>
+        <a>User Level : Administrator </a>
+      </li>
+    
+      <li >
+        <a (click)="logout()">Logout</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+-->
+
+<!-- 
+<div class="myContainer">
+
+  
+  <input type="checkbox" name="" id="check">
+  <div class="button_div">
+    <h2> &lt; header &gt; </h2>
+    <button class="menu-button">
+      <div class="menu-icon"></div>
+    </button>
+  </div>
+  
+  <nav class="navFullScreen">
+    <ul>
+      <li>
+          <a  [routerLink]="['/stock/TbUutname']" routerLinkActive="active">
+              
+              <p>
+                  Non-ATE Profile
+               
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/ProfileATE']" routerLinkActive="active">
+             
+              <p>
+                   ATE Profile 
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/sn']" routerLinkActive="active">
+            
+              <p>
+                   CMA Serial Number
+                
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/IMEI/Product']" routerLinkActive="active">
+            
+              <p>
+                  SN And IMEI Edit
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/AddIMEI']" routerLinkActive="active">
+            
+              <p>
+                  IMEI Import
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/stock/tbEquipment']" routerLinkActive="active">
+           
+              <p>
+                  Equipment Edit MSSQL
+                 
+              </p>
+          </a>
+      </li>
+  
+      <li>
+          <a  [routerLink]="['/goldBoard']" routerLinkActive="active">
+            
+              <p>
+                  Gold Boards
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/fixture']" routerLinkActive="active">
+            
+              <p>
+                  Fixture Config
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/model']" routerLinkActive="active">
+           
+              <p>
+                  Board/Module,model
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/fw']" routerLinkActive="active">
+             
+              <p>
+                  FW
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/EquipmentCal']" routerLinkActive="active">
+             
+              <p>
+                  Equipment Edit MySQL
+                 
+              </p>
+          </a>
+      </li>
+      <li>
+          <a  [routerLink]="['/ATECalibration']" routerLinkActive="active">
+             
+              <p>
+                  ATE Calibration
+                 
+              </p>
+          </a>
+      </li>
+      <li (click)="logout()">
+          <a >
+             
+              <p>
+                  Log out
+                  
+              </p>
+          </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+-->
+
+<header>
+    <div class="container col-12">
+      
+        <img class="company_logo" src="assets/images/image18.png"  alt="profile" > 
+        <!--     <h3 class="logo">Brand<span>Name</span></h3> 
+      -->
+        <input type="checkbox" name="" id="check">
+        
+       
+
+        <div class="nav-btn">
+            <div class="nav-links">
+                <ul>
+                    <li class="nav-link" style="--i: .6s">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-link" style="--i: .85s">
+                        <a href="#">ATE<i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown">
+                            <ul>
+                                <li class="dropdown-link">
+                                    <a [routerLink]="['/stock/TbUutname']" routerLinkActive="active">Products</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a [routerLink]="['/ProfileATE']" routerLinkActive="active">ATE Profile</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a [routerLink]="['/ATECalibration']" routerLinkActive="active">ATE Calibration</a>
+                                </li>
+                                <div class="arrow"></div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-link" style="--i: 1.1s">
+                        <a href="#">Equipment<i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown">
+                            <ul>
+                                <li class="dropdown-link">
+                                    <a [routerLink]="['/stock/tbEquipment']" routerLinkActive="active">Common Equipment</a>
+                                </li>
+                                <li class="dropdown-link">
+                                    <a [routerLink]="['/EquipmentCal']" routerLinkActive="active">ATE Equipment</a>
+                                </li>
+                                <div class="arrow"></div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-link" style="--i: 1.1s">
+                        <a [routerLink]="['/IMEI/Product']" routerLinkActive="active">SN/IMEI</a>
+                        
+                    </li>
+                    <li class="nav-link" style="--i: 1.1s">
+                        <a [routerLink]="['/goldBoard']" routerLinkActive="active">Gold Board</a>
+                        
+                    </li>
+                   
+                </ul>
+            </div>
+
+            <div class="log-sign" style="--i: 1.8s">
+            
+                
+
+                <a href="#" class="btn btn-primary  logoutBtn" (click)="logout()">Log out</a>
+                <p class="username">username : admin <BR> type : Administrator</p>
+            </div>
+        </div>  
+
+        <div class="hamburger-menu-container">
+            <div class="hamburger-menu">
+                <div></div>
+            </div>
+        </div> 
+    </div>
+</header>

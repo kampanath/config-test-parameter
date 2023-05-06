@@ -1,0 +1,69 @@
+<div class="content-wrapper" id="mainFrame" *ngIf="mProducTableNames" style="overflow: hidden;"
+    style="background-color: rgb(175, 191, 206);">
+  
+    <section class="content col-10" id="bgFrame" style="padding-right: 2rem;"
+        style="background-color: rgb(175, 191, 206);">
+        <div class="card" style="width: 100%;" style="background-color: rgb(175, 191, 206);">
+            <div class="card-body" id="divtest">
+
+                <h5 class=" text-black ml-1 col-2" >IMEI Import </h5>
+
+
+
+                <mat-form-field class="col-2 mr-30 pr-10" style="display: inline-block;">
+                    <mat-label>Table</mat-label>
+                    <mat-select [(value)]="filterSelected" (selectionChange)="selectionChanged($event)">
+                        <mat-option *ngFor="let food of stringArray1" [value]="food.tables_in_pk20">
+                            {{food.tables_in_pk20}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                    <div class="ml-10"> 
+                        <input type="file" style="display: none" #fileInput accept=".csv"
+                            accept=".txt" (change)="onChangeFileInput($event)" />
+                        <button mat-raised-button color="primary" class="file-select-button"
+                            (click)="onClickFileInputButton()">
+                            <mat-icon>attach_file</mat-icon>
+                            Upload IMEI File
+                        </button>
+
+                        <p class="file-name" *ngIf="!file; else fileName"></p>
+                        <ng-template #fileName>
+                            <p class="file-name">{{ file?.name }}</p>
+                        </ng-template>
+                    </div>
+
+                        <div class="form-group col-2">
+                            <label>Total IMEI</label>
+                            <input [(ngModel)]="csvIMEIRowCount" type="text" class="form-control"
+                                name="Config Data" disabled>
+                        </div>
+
+                        <div class="form-group col-2">
+                            <label>Latest IMEI Row From Table</label>
+                            <input [(ngModel)]="mProducGenericIMEILatestRowSingle" type="text" class="form-control"
+                                name="Config Data2" disabled>
+                        </div>
+
+                        <button mat-raised-button color="primary" class="ml-4" (click)="addNewProfile()" btn-primary> Add New
+                            Profile </button>
+
+                        <span class="col-10 col-lg-5" id="searchText2">
+                            <h6 style="margin-top: 10px;">Status</h6>
+                            <textarea [(ngModel)]="textAreaString" class="form-control input-lg"
+                                placeholder="Enter SN Or IMEI"  id="statusText" name="vvv"></textarea>
+                        </span>
+
+                        <button mat-raised-button color="primary" class="ml-4" (click)="scrollBOttom()" btn-primary> scroll bottom </button>
+
+                    
+
+                
+
+
+
+            </div>
+        </div>
+    </section>
+</div>

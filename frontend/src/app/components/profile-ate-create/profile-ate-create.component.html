@@ -1,0 +1,159 @@
+<div class="content-wrapper bg-transparent mt-5" >
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary"  >
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Edit ATE Profile</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Config Id</label>
+                                            <input [(ngModel)]="mProduct.configId" type="number" class="form-control"
+                                                name="Config Id" disabled>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Station Id</label>
+                                            <input [(ngModel)]="mProduct.stationId" type="number" class="form-control"
+                                                name="Station Id">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Config Type</label>
+                                            <input [(ngModel)]="mProduct.configType" type="text" class="form-control"
+                                                name="Config Type" maxlength="10" #configType="ngModel">
+
+                                        </div>
+                                        <span *ngIf="configType.errors?.maxlength">
+                                            Config Type must not over 10 characters long.
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Hardware Type</label>
+                                            <input [(ngModel)]="mProduct.hardwareType" type="text" class="form-control"
+                                                name="Hardware Type" maxlength="10" #hardwareType="ngModel">
+                                        </div>
+
+                                        <span *ngIf="hardwareType.errors?.maxlength">
+                                            Hardware type must not over 10 characters long.
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>User ID</label>
+                                            <input [(ngModel)]="mProduct.userId" type="number" class="form-control"
+                                                name="User ID">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Config Rev No</label>
+                                            <input [(ngModel)]="mProduct.configRevNo" type="text" class="form-control"
+                                                name="Config Rev No" maxlength="50" #configRev="ngModel">
+                                        </div>
+
+                                        <span *ngIf="configRev.errors?.maxlength">
+                                            Config Rev No. must not over 50 characters long.
+                                        </span>
+                                    </div>
+
+
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Config Name</label>
+                                            <input [(ngModel)]="mProduct.configName" type="text" class="form-control"
+                                                name="Config Name" maxlength="50" #configName="ngModel">
+                                        </div>
+                                        <span *ngIf="configName.errors?.maxlength">
+                                            Config name must not over 50 characters long.
+                                        </span>
+
+
+                                    </div> 
+                                   
+
+
+                                </div>
+
+                                <div class="row">
+                                    
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Config Data</label>
+                                        <!--    <input [(ngModel)]="mProduct.configData" type="text" class="form-control"
+                                                name="Config Data"> -->
+                                            <textarea [(ngModel)]="mProduct.configData" class="form-control" rows="10" name="Config Data"></textarea>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Is Active</label>
+                                            <input [(ngModel)]="mProduct.isActive" type="text" class="form-control"
+                                                name="Is Active">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="col-md-4 mt-4">
+
+                                        <div class="container float-left">
+                                            <input type="file" style="display: none" #fileInput accept=".csv"
+                                                accept=".txt" (change)="onChange($event.target.files)" />
+                                            <button mat-raised-button color="primary" class="file-select-button"
+                                                (click)="onClickFileInputButton()">
+                                                <mat-icon>attach_file</mat-icon>
+                                                Upload New Config Data File
+                                            </button>
+
+                                            <p class="file-name" *ngIf="!fileName; else fileNameTp"></p>
+                                            <ng-template #fileNameTp>
+                                                <p class="file-name">{{ fileName }}</p>
+                                            </ng-template>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

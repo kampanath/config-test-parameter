@@ -1,0 +1,55 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Create UUT Name</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <form role="form">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>imei</label>
+                                            <input [(ngModel)]="mProduct.imei" type="text" class="form-control" name="imei">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>SN</label>
+                                            <input [(ngModel)]="mProduct.sn" type="text" class="form-control" name="sn">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>remodel</label>
+                                            <input [(ngModel)]="mProduct.remodel" type="text" class="form-control" name="remodel">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit" class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>

@@ -1,0 +1,95 @@
+<div id="mainFrame2" *ngIf="mProductArray" style="overflow: auto;">
+    <BR>
+    <h5 class="titles col-2 text-white" style="font-weight: bold;">Profile</h5>
+
+    <table class="table table-bordered table-striped table-hover" style="overflow: hidden;" > 
+        <thead class="thead">
+            <tr>
+                <th class="text-center align-middle">Profile ID</th>
+                <th class="text-center align-middle">Profile Name</th>
+                <th class="text-center align-middle">Profile Desc</th>
+                <th class="text-center align-middle">Profile Req Doc No</th>
+                <th class="text-center align-middle">Profile Version</th>
+                <th class="text-center align-middle">Profile Date Create</th>
+                <th class="text-center align-middle">Cal ID</th>
+                <th class="text-center align-middle">Is Active</th>
+                <th class="text-center align-middle">Remark</th>
+                <th class="text-center align-middle">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mProductArray">
+                <td class="text-center align-middle">{{ item.profileId    }}</td>
+                <td class="text-center align-middle">{{ item.profileName}}</td>
+                <td class="text-center align-middle">{{ item.profileDesc}}</td>
+                <td class="text-center align-middle">{{ item.profileReqDocNo}}</td>
+                <td class="text-center align-middle">{{ item.profileVersion}}</td>
+                <td class="text-center align-middle">{{ item.profileDateCreate}}</td>
+                <td class="text-center align-middle">{{ item.calid }}</td>
+                <td class="text-center align-middle">{{ item.isActive}}</td>
+                <td class="text-center align-middle">{{ item.remark}}</td>
+                <td class="text-center align-middle">
+                    <img (click)="Add(item.profileId)" src="assets/images/image4526.png"
+                        class="edit_product">
+                    <img (click)="editProfile(item.profileId)" src="assets/images/ic_edit.png"
+                        class="edit_product">
+                        <img (click)="deleteTbProfile(item.profileId)" src="assets/images/ic_delete.png" class="edit_product">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h5 class="titles col-6 text-white" style="font-weight: bold;">Profile Detail</h5>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="thead">
+                <tr>
+                    <th class="text-center align-middle">Profile Detail ID</th>
+                    <th class="text-center align-middle">Profile ID</th>
+                    <th class="text-center align-middle">Detail Sq No</th>
+                    <th class="text-center align-middle">Detail Test Name</th>
+                    <th class="text-center align-middle">Detail Desc</th>
+                    <th class="text-center align-middle">Detail LSL</th>
+                    <th class="text-center align-middle">Detail USL</th>
+                    <th class="text-center align-middle">Detail UOM</th>
+                    <th class="text-center align-middle">Detail Req Section</th>
+
+                    <th class="text-center align-middle">Detail Category</th>
+                    <th class="text-center align-middle">Detail Option</th>
+                    <th class="text-center align-middle">Detail CMA Option</th>
+                    <th class="text-center align-middle">Detail DEBUG Option</th>
+                    <th class="text-center align-middle">IsActive</th>
+                    <th class="text-center align-middle">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of mProductArray2">
+                    <td class="text-center align-middle">{{ item.profiledetailId    }}</td>
+                    <td class="text-center align-middle">{{ item.profileId}}</td>
+                    <td class="text-center align-middle">{{ item.detailSqNo}}</td>
+                    <td class="text-center align-middle">{{ item.detailTestName}}</td>
+                    <td class="text-center align-middle">{{ item.detailDesc}}</td>
+                    <td class="text-center align-middle">{{ item.detailLsl}}</td>
+                    <td class="text-center align-middle">{{ item.detailUsl }}</td>
+                    <td class="text-center align-middle">{{ item.detailUom}}</td>
+                    <td class="text-center align-middle">{{ item.detailReqSection}}</td>
+
+                    <td class="text-center align-middle">{{ item.detailCategory}}</td>
+                    <td class="text-center align-middle">{{ item.detailOption}}</td>
+                    <td class="text-center align-middle">{{ item.detailCmaoption }}</td>
+                    <td class="text-center align-middle">{{ item.detailDebugoption}}</td>
+                    <td class="text-center align-middle">{{ item.isActive}}</td>
+                    <td class="text-center align-middle">
+                        <img (click)="AddProfileDetail(item.profiledetailId)" src="assets/images/image4526.png"
+                            class="edit_product">
+                        <img (click)="editProfileDetail(item.profiledetailId)" src="assets/images/ic_edit.png"
+                            class="edit_product">
+
+                    <img (click)="deleteTbProfileDetail(item.profiledetailId)" src="assets/images/ic_delete.png" class="edit_product">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+</div>

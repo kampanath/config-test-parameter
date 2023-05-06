@@ -1,0 +1,780 @@
+
+  
+    <section class="content" id="bgFrame">
+        <div class="card " >
+            <div class="card-body" id="divtest" style="background-color: rgb(181, 213, 226);">
+                <div class="row card-body-header" id="topMenu">
+                </div>
+                <h4>{{ countLabel }}</h4> 
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+    
+                            <table class="table table-bordered table-striped table-hover " id="table1">
+                                <thead class="thead" style="background-color: rgb(119, 191, 219);">
+                                    <tr>
+                                        <th class="text-center" width="50%">ID Count</th>
+                                        <th class="text-center" width="50%">Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of mProductArray">
+                                        <td class="text-center">{{ item.idcnt }}</td>
+                                        <td class="text-center">{{ item.cnt_val }}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <h4 style="margin-top: 10px;">{{ imeiLabel }}</h4>
+                <div class="container-fluid">
+                    <div class="row" id="SearchMenu">
+                        <!--
+                        <div class="col-6 col-sm-2">
+                            <input [(ngModel)]="searchText1" class="form-control input-lg" placeholder="Enter SN Or IMEI">
+
+                        </div>
+                        <div class="col-6 col-sm-2">
+                            <button (click)="GetSN()" btn-primary> Search </button>
+                        </div>
+                            -->
+                        <div class="col-6 col-lg-3" id="searchText2">
+                            <h6 style="margin-top: 10px;">Search By SN Or IMEI</h6>
+                            <textarea [(ngModel)]="searchText1" class="form-control input-lg"
+                                placeholder="Enter SN Or IMEI" rows="5"></textarea>
+                            <button mat-raised-button color="primary" (click)="GetSN(searchText1)" btn-primary> Search </button>
+                        </div>
+
+                        <div class="col-6 col-lg-3" id="searchText3">
+                            <h6 style="margin-top: 10px;">Search By ID</h6>
+                            <input [(ngModel)]="searchText3" class="form-control input-lg" placeholder="Enter ID Count">
+                            <button mat-raised-button color="primary" (click)="GetID()" btn-primary> Search </button>
+                        </div>
+                        <!--
+                        <div class="col-6 col-lg-3" id="fileUpload">
+                            <h6 style="margin-top: 10px;">Search By CVS File</h6>
+                            <input type="file" #csvReader (change)="uploadListener($event)" accept=".csv">
+                          
+
+                        </div>
+                    -->
+                    </div>
+                </div>
+              
+                <ng-container
+                  *ngIf="mProductArray2 ; then getSN; else getID">
+                </ng-container>
+                    <ng-template #getSN>
+                     
+                        <table class="table table-bordered table-striped table-hover table-sm col-6 " id="table2"
+                            style="margin-top: 10px;">
+
+                            <thead class="thead" style="background-color: rgb(119, 191, 219);">
+                                <tr>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">IMEI</th>
+                                    <th class="text-center">SN</th>
+                                    <th class="text-center">Remodel</th>
+                                    <th *ngIf="mProductArray2[0].idbcx_imei" class="text-center">MAC Address</th>
+                                    <th *ngIf="mProductArray2[0].idgdb_imei" class="text-center">PSK</th>
+                                    <th *ngIf="mProductArray2[0].idgdb_imei" class="text-center">Terminal</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngIf="mProductArray2[0].id9522b_imei" >
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9522b_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+
+                                    <td class="text-center">
+
+                                        <img (click)="edit(item.id9522b_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9522b_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9522b_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+
+                                    <td class="text-center">
+
+                                        <img (click)="edit(item.id9522b_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9523_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9523_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9523_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9523_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9523_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9523_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9523mw_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9523mw_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9523mw_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9523mw_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9523mw_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9523mw_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9523ptt_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9523ptt_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9523ptt_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9555a_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9555a_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9555a_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9555a_gsa_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9555a_gsa_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9555a_gsa_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9555a_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9555a_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9555a_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575e_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575e_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575e_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575e_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575e_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575e_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575gsa_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575gsa_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575gsa_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575ptt_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575ptt_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575ptt_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9575ptt_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9575ptt_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9575ptt_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9602_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9602_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9602_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9602n_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9602n_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9602n_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9602r_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9602r_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9602r_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9602sb_ext_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9602sb_ext_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9602sb_ext_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9602sb_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9602sb_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9602sb_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9603_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9603_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9603_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].id9603r_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.id9603r_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.id9603r_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].idbcx_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.idbcx_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">{{ item.mac_addr }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.idbcx_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].idgdb_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.idgdb_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">{{ item.psk }}</td>
+                                    <td class="text-center">{{ item.terminal }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.idgdb_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="mProductArray2[0].idsfx_imei">
+                                <tr *ngFor="let item of mProductArray2">
+                                    <td class="text-center">{{ item.idsfx_imei }}</td>
+                                    <td class="text-center">{{ item.imei }}</td>
+                                    <td class="text-center">{{ item.sn }}</td>
+                                    <td class="text-center">{{ item.remodel }}</td>
+                                    <td class="text-center">
+                                        <img (click)="edit(item.idsfx_imei)"
+                                            src="assets/images/ic_edit.png" class="edit_product">
+                                    </td>
+                                </tr>
+                            </tbody>
+                       
+                        </table>
+                   
+                       
+                    </ng-template>
+
+                <ng-template #getID>
+                    <div *ngIf="serachByID1"> 
+                    <table class="table table-bordered table-striped table-hover table-sm col-6" id="table2"
+                        style="margin-top: 10px;">
+
+                        <thead class="thead" style="background-color: rgb(119, 191, 219);">
+                            <tr>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">IMEI</th>
+                                <th class="text-center">SN</th>
+                                <th class="text-center">Remodel</th>
+                                <th *ngIf="mProductArray3.idbcx_imei" class="text-center">MAC Address</th>
+                                <th *ngIf="mProductArray3.idgdb_imei" class="text-center">PSK</th>
+                                <th *ngIf="mProductArray3.idgdb_imei" class="text-center">Terminal</th>
+
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="mProductArray3.id9522b_ext_imei">
+
+                            <td class="text-center">{{ mProductArray3.id9522b_ext_imei }}</td>
+                            <td class="text-center">{{ mProductArray3.imei }}</td>
+                            <td class="text-center">{{ mProductArray3.sn }}</td>
+                            <td class="text-center">{{ mProductArray3.remodel }}</td>
+
+                            <td class="text-center">
+
+
+                                <img (click)="edit(mProductArray3.id9522b_ext_imei)" src="assets/images/ic_edit.png"
+                                    class="edit_product">
+
+                            </td>
+
+
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9522b_imei">
+
+                            <td class="text-center">{{ mProductArray3.id9522b_imei }}</td>
+                            <td class="text-center">{{ mProductArray3.imei }}</td>
+                            <td class="text-center">{{ mProductArray3.sn }}</td>
+                            <td class="text-center">{{ mProductArray3.remodel }}</td>
+
+                            <td class="text-center">
+
+
+                                <img (click)="edit(mProductArray3.id9522b_imei)" src="assets/images/ic_edit.png"
+                                    class="edit_product">
+
+                            </td>
+
+
+                        </tbody>
+
+                        <tbody *ngIf="mProductArray3.id9523_imei">
+                            <td class="text-center">{{ mProductArray3.id9523_imei }}</td>
+                            <td class="text-center">{{ mProductArray3.imei }}</td>
+                            <td class="text-center">{{ mProductArray3.sn }}</td>
+                            <td class="text-center">{{ mProductArray3.remodel }}</td>
+                            <td class="text-center">
+                                <img (click)="edit(mProductArray3.id9523_imei)" src="assets/images/ic_edit.png"
+                                    class="edit_product">
+                            </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9523_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9523_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9523_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9523mw_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9523mw_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9523mw_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9523mw_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9523mw_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9523mw_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9523ptt_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9523ptt_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9523ptt_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9555a_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9555a_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9555a_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9555a_gsa_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9555a_gsa_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9555a_gsa_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9555a_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9555a_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9555a_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575e_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575e_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575e_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575e_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575e_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575e_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575gsa_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575gsa_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575gsa_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575ptt_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575ptt_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575ptt_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9575ptt_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9575ptt_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9575ptt_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9602_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9602_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9602_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9602n_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9602n_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9602n_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9602r_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9602r_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9602r_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9602sb_ext_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9602sb_ext_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9602sb_ext_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9602sb_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9602sb_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9602sb_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9603_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9603_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9603_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.id9603r_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.id9603r_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.id9603r_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.idbcx_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.idbcx_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">{{ mProductArray3.mac_addr }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.idbcx_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.idgdb_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.idgdb_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">{{ mProductArray3.psk }}</td>
+                                <td class="text-center">{{ mProductArray3.terminal }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.idgdb_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        <tbody *ngIf="mProductArray3.idsfx_imei">
+                            
+                                <td class="text-center">{{ mProductArray3.idsfx_imei }}</td>
+                                <td class="text-center">{{ mProductArray3.imei }}</td>
+                                <td class="text-center">{{ mProductArray3.sn }}</td>
+                                <td class="text-center">{{ mProductArray3.remodel }}</td>
+                                <td class="text-center">
+                                    <img (click)="edit(mProductArray3.idsfx_imei)"
+                                        src="assets/images/ic_edit.png" class="edit_product">
+                                </td>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </ng-template>
+             <!--
+            <div class="col-6 col-lg-3  ml-1" id="fileUpload">
+                <h6 style="margin-top: 30px;">Upload New IMEI File</h6>
+                <input type="file" #csvReader (change)="uploadListener2($event)" accept=".csv">
+            
+                <button class="mt-3" mat-raised-button color="primary" (click)="AddNewIMEI()" btn-primary> Add IMEI From File </button>
+                                      
+             </div>
+            -->
+            </div>
+        </div>
+    </section>
+
+
+
+

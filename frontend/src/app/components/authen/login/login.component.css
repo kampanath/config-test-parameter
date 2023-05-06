@@ -1,0 +1,62 @@
+
+#logo{ 
+     width: 100%; 
+     height: 100%; 
+   }
+
+   
+#logo2{ 
+    float:left;
+  
+  }
+
+
+  .login-boxxxx 
+  {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  
+  .login-pagexxx 
+  {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .login-boxxx {
+    top:22%;
+    left:10%;
+  
+}
+
+.login-page {
+ 
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  width: 100%;
+  
+
+}
+
+
+
+  @media (max-width: 576px){
+   
+    .login-boxxx {
+         top:22%;
+         left:20%;
+
+    }
+
+    .login-page {
+     
+      background-size: cover;
+      background-position: 45% 55%;
+  
+    }
+
+
+  }

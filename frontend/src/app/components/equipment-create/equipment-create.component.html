@@ -1,0 +1,195 @@
+
+
+<div class="content-wrapper bg-transparent mt-5" >
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary"  >
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Create ATE Equipment</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Equipment ID</label>
+                                            <input [(ngModel)]="mProduct.equipment_ID" type="number"
+                                                class="form-control" name="Equipment ID" disabled>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Equipment Name</label>
+                                            <input [(ngModel)]="mProduct.equipment_Name" type="text"
+                                                class="form-control" name="Equipment Name">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Model</label>
+                                            <input [(ngModel)]="mProduct.model" type="text" class="form-control"
+                                                name="Model" maxlength="45" #configType="ngModel">
+
+                                        </div>
+                                        <span *ngIf="configType.errors?.maxlength">
+                                            Model must not over 45 characters long.
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Serial No</label>
+                                            <input [(ngModel)]="mProduct.serial_No" type="text" class="form-control"
+                                                name="Serial No" maxlength="45" #hardwareType="ngModel">
+                                        </div>
+
+                                        <span *ngIf="hardwareType.errors?.maxlength">
+                                            Serail No. must not over 45 characters long.
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Manufacturer</label>
+                                            <input [(ngModel)]="mProduct.manufacturer" type="text" class="form-control"
+                                                name="Manufacturer">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <!--  <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Config Name</label>
+                                            <input [(ngModel)]="mProduct.configName" type="text" class="form-control"
+                                                name="Config Name" maxlength="50" #configName="ngModel">
+                                        </div>
+                                        <span *ngIf="configName.errors?.maxlength">
+                                            Config name must not over 50 characters long.
+                                        </span>
+
+
+                                    </div>  -->
+
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>ATE No</label>
+                                            <input [(ngModel)]="mProduct.atE_No" type="text" class="form-control"
+                                                name="ATE No" maxlength="16" #configRev="ngModel">
+                                        </div>
+
+                                        <span *ngIf="configRev.errors?.maxlength">
+                                            ATE No. must not over 16 characters long.
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <input [(ngModel)]="mProduct.location" type="text" class="form-control"
+                                                name="Location">
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Asset No</label>
+                                            <input [(ngModel)]="mProduct.asset_No" type="text" class="form-control"
+                                                name="Asset No" maxlength="10" #AssetNo="ngModel">
+                                        </div>
+
+                                        <span *ngIf="AssetNo.errors?.maxlength">
+                                            AssetNo must not over 10 characters long.
+                                        </span>
+
+
+                                    </div>
+
+                                </div>
+                        <!-- -->     <div class="row">
+                                      
+
+                                        <mat-form-field class="ml-2">
+                                            <mat-label>Last Cal Date </mat-label>
+                                            <input matInput [matDatepicker]="picker"   (dateChange)="lastCalDateChange($event)" #fileInput2>
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                            
+                                        </mat-form-field>
+
+                                        <mat-form-field>
+                                            <mat-label>Next Cal Due Date</mat-label>
+                                            <input matInput [matDatepicker]="picker2"  (dateChange)="nextCalDateChange($event)" #fileInput>
+                                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker2></mat-datepicker>
+
+                           
+                                        </mat-form-field>
+                    
+
+                                     
+                                      
+
+                            
+                                        <div class="col-md-4 ml-0 ml-lg-4">
+                                            <div class="form-group">
+                                                <label>Cal Cycle</label>
+                                                <input [(ngModel)]="mProduct.cal_Cycle" type="number" class="form-control"
+                                                    name="Cal Cycle">
+                                            </div>
+                                        </div>
+                                </div>  
+                             
+
+                                <div class="row">
+
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>remark</label>
+                                            <input [(ngModel)]="mProduct.remark" type="text" class="form-control"
+                                                name="remark">
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

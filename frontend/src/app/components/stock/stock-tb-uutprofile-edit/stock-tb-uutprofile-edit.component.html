@@ -1,0 +1,100 @@
+<div class="content-wrapper bg-transparent mt-5">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary">
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Edit UUT Profile</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>UUT Profile ID</label>
+                                            <input [(ngModel)]="mProduct.uutprofileId" type="number"
+                                                class="form-control" name="uutprofileId" disabled>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile ID</label>
+                                            <input [(ngModel)]="mProduct.profileId" type="number" class="form-control"
+                                                name="profileId">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>UUT Name ID</label>
+                                            <input [(ngModel)]="mProduct.uutnameId" type="number" class="form-control"
+                                                name="uutnameId">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Rev ID</label>
+                                            <input [(ngModel)]="mProduct.revId" type="number" class="form-control"
+                                                name="revId">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Station ID</label>
+                                            <input [(ngModel)]="mProduct.stationId" type="number" class="form-control"
+                                                name="stationId">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Fixture ID</label>
+                                            <input [(ngModel)]="mProduct.fixtureId" type="number" class="form-control"
+                                                name="fixtureId">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Is Active</label>
+                                            <input [(ngModel)]="mProduct.isActive" type="contenteditable"
+                                                class="form-control" name="isActive">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Remark</label>
+                                            <input [(ngModel)]="mProduct.remark" type="text" class="form-control"
+                                                name="remark">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

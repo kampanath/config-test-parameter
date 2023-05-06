@@ -1,0 +1,46 @@
+<div id="mainFrame2" *ngIf="mProductArray" style="overflow: hidden;">
+    <BR>
+    <h5 class="titles col-3 text-white ml-1 ml-md-5 " style="font-weight: bold;">UUT Profile</h5><BR>
+
+    <table class="table table-bordered table-striped table-hover ml-1 ml-md-5" id="table">
+        <thead class="thead">
+            <tr>
+                <th class="text-center">UUT Profile ID</th>
+                <th class="text-center">Profile ID</th>
+                <th class="text-center">UUT Name ID</th>
+                <th class="text-center">Rev ID</th>
+
+                <th class="text-center">Station ID</th>
+                <th class="text-center">Fixture ID</th>
+                <th class="text-center">UUT Profile Date</th>
+
+                <th class="text-center">Is Active</th>
+                <th class="text-center">Remark</th>
+             
+                <th class="text-center">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mProductArray">
+                <td class="text-center">{{ item.uutprofileId }}</td>
+                <td class="text-center">{{ item.profileId }}</td>
+                <td class="text-center">{{ item.uutnameId }}</td>
+                <td class="text-center">{{ item.revId }}</td>
+
+                <td class="text-center">{{ item.stationId }}</td>
+                <td class="text-center">{{ item.fixtureId }}</td>
+                <td class="text-center">{{ item.uutprofileDate }}</td>
+
+                <td class="text-center">{{ item.isActive }}</td>
+                <td class="text-center">{{ item.remark }}</td>
+                <td class="text-center">
+                    <img (click)="view(item.profileId)" src="assets/images/ic_detail.png" class="edit_product">
+                    <img (click)="Add(item.uutprofileId)" src="assets/images/image4526.png" class="edit_product">
+                    <img (click)="edit(item.uutprofileId)" src="assets/images/ic_edit.png" class="edit_product">
+                    <img (click)="delete(item.uutprofileId)" src="assets/images/ic_delete.png" class="edit_product">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

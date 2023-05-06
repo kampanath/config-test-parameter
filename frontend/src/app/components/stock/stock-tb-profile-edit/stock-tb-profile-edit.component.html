@@ -1,0 +1,89 @@
+<div class="content-wrapper bg-transparent mt-5">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary">
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Edit Profile</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile ID</label>
+                                            <input [(ngModel)]="mProduct.profileId" type="number" class="form-control" name="profileId" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile Name</label>
+                                            <input [(ngModel)]="mProduct.profileName" type="text" class="form-control" name="profileName">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile Desc</label>
+                                            <input [(ngModel)]="mProduct.profileDesc" type="text" class="form-control" name="profileDesc">
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                             
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile Req Doc No</label>
+                                            <input [(ngModel)]="mProduct.profileReqDocNo" type="text" class="form-control" name="profileReqDocNo">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile Version</label>
+                                            <input [(ngModel)]="mProduct.profileVersion" type="text" class="form-control" name="profileVersion" ngModel maxlength="20">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Cal ID</label>
+                                            <input [(ngModel)]="mProduct.calid" type="number" class="form-control" name="calid">
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Is Active</label>
+                                            <input [(ngModel)]="mProduct.isActive" type="text" class="form-control" name="isActive">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Remark</label>
+                                            <input [(ngModel)]="mProduct.remark" type="text" class="form-control" name="remark">
+                                        </div>
+                                    </div>
+
+                                </div>
+                         
+                            </div>
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

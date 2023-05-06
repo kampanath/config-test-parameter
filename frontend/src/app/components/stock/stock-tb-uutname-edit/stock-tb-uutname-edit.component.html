@@ -1,0 +1,122 @@
+<div class="content-wrapper bg-transparent mt-5" >
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary"  >
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Edit ATE Profile</h5>
+                            <div class="card-body" >
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>UUT Name ID</label>
+                                            <input [(ngModel)]="mProduct.uutnameId" type="number" class="form-control" name="uutnameId" disabled>
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>UUT Name</label>
+                                            <input [(ngModel)]="mProduct.uutname" type="text" class="form-control" name="UUTName">
+                                           
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>UUT Desc</label>
+                                            <input [(ngModel)]="mProduct.uutdesc" type="text" class="form-control" name="UUTDesc" >
+                                        </div>
+                                    </div>
+
+                                </div>
+                               
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Model ID</label>
+                                            <input [(ngModel)]="mProduct.modelId" type="number" class="form-control" name="modelID">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Factory ID</label>
+                                            <input [(ngModel)]="mProduct.factoryId" type="number" class="form-control" name="factoryID">
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>PFS Work ST</label>
+                                            <input [(ngModel)]="mProduct.pfsWorkSt" type="text" class="form-control" name="PFS_Work_ST">
+                                        </div>
+                                    </div>
+
+                                </div>
+                              
+                             
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>PFS OP</label>
+                                            <input [(ngModel)]="mProduct.pfsOp" type="text" class="form-control" name="PFS_OP">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>CAL Require</label>
+                                            <input [(ngModel)]="mProduct.calrequire" type="text" class="form-control" name="CALRequire">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>CAL Cycle</label>
+                                            <input [(ngModel)]="mProduct.calcycle" type="number" class="form-control" name="CALCycle">
+                                        </div>
+                                    </div>
+
+                                </div>
+                             
+                            
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Gold Test Require</label>
+                                            <input [(ngModel)]="mProduct.goldTestRequire" type="number" class="form-control" name="GoldTestRequire">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Is Active</label>
+                                            <input [(ngModel)]="mProduct.isActive" type="text" class="form-control" name="isActive">
+                                        </div>
+                                    </div>
+
+                                   
+
+                                </div>
+                           
+                            </div>
+
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

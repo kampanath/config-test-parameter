@@ -1,0 +1,94 @@
+<div id="mainFrame2" *ngIf="mProductArray" style="overflow: hidden;">
+    <div class="container col-12">
+      
+
+        <BR>
+            <h5 class="text-white ml-1 col-12" style="font-weight: bold;">ATE Equipment</h5><BR>
+        
+                <mat-form-field class="col-5 col-md-2" style="display: inline-block;">
+                    <mat-label class="text-white">Location</mat-label>
+                    <mat-select [(value)]="filterSelected" (selectionChange)="selectionChanged($event)" >
+                        <mat-option *ngFor="let food of stringArray1" [value]="food">
+                            {{food}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="col-5 col-md-2" style="display: inline-block;">
+                    <mat-label class="text-white">ATE No.</mat-label>
+                    <mat-select [(value)]="filterSelected2" (selectionChange)="selectionChanged2($event)">
+                        <mat-option *ngFor="let food of stringArray2" [value]="food">
+                            {{food}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div style="display: inline-block;">
+                    <button  (click)="startFilter()" class="btn btn-primary"> Start  Filter </button>
+                    <button   (click)="Add()" class="btn btn-primary ml-3"> Add New </button>
+                </div>
+        
+
+          
+            <table class="table table-bordered table-striped table-hover mt-2">
+                <thead class="thead">
+                    <tr>
+                        <th class="text-center align-middle">Equipment ID </th>
+                        <th class="text-center align-middle">Equipment Name </th>
+                        <th class="text-center align-middle">Model </th>
+                        <th class="text-center align-middle">Serial No </th>
+                        <th class="text-center align-middle">Manufacturer </th>
+
+                        <th class="text-center align-middle">ATE No </th>
+                        <th class="text-center align-middle">Location </th>
+                        <th class="text-center align-middle">Asset No </th>
+
+                        <th class="text-center align-middle">Last Cal Date </th>
+                        <th class="text-center align-middle">Next Cal Due Date </th>
+                        <th class="text-center align-middle col-1">Cal_Cycle </th>
+                        <th class="text-center align-middle">Remark </th>
+                    
+                        <th class="text-center align-middle">Action</th>
+                       
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of mProductArray">
+                        <td class="text-center align-middle">{{ item.equipment_ID  }}</td>
+                        <td class="text-center align-middle">{{ item.equipment_Name  }}</td>
+                        <td class="text-center align-middle">{{ item.model  }}</td>
+
+                        <td class="text-center align-middle">{{ item.serial_No  }}</td>
+                        <td class="text-center align-middle">{{ item.manufacturer  }}</td>
+                        <td class="text-center align-middle">{{ item.atE_No  }}</td>
+
+                        <td class="text-center align-middle">{{ item.location  }}</td>
+                        <td class="text-center align-middle">{{ item.asset_No  }}</td>
+                        <td class="text-center align-middle">{{ item.last_Cal_Date  }}</td>
+
+                        <td class="text-center align-middle">{{ item.next_Cal_Due_Date  }}</td>
+                        <td class="text-center align-middle col-1" id="configData">{{ item.cal_Cycle  }}</td>
+
+                        <td class="text-center align-middle">{{ item.remark  }}</td>
+                      
+                        <td class="text-center align-middle">
+                                <!-- <img (click)="Add(item.configId )" src="assets/images/image4526.png"
+                                class="edit_product"> -->
+                           
+                            <img (click)="edit(item.equipment_ID )" src="assets/images/ic_edit.png"
+                                class="edit_product">
+                          
+                              
+                        </td>
+
+                    
+                    </tr>
+                 
+                </tbody>
+            </table>
+       
+</div>
+
+</div>
+

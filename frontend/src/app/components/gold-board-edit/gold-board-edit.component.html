@@ -1,0 +1,44 @@
+
+<div class="content-wrapper"  style="background-color: transparent;">
+    
+    <section class="content"  style="background-color: transparent;">
+        <div class="container-fluid"   style="background-color: transparent;">
+            <div class="row" >
+                <div class="col-8 col-md-6">
+                    <div class="card card-primary mt-5" style="background-color: rgb(175, 191, 206);">
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(73, 158, 207);" >Edit Gold Board</h5>
+                            <div class="card-body" >
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Serial Number</label>
+                                            <input [(ngModel)]="mProduct.serial_no" type="text" class="form-control" name="serial number" disabled>
+                                          
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Model Number</label>
+                                            <input [(ngModel)]="mProduct.model_no" type="text" class="form-control" name="model number">
+                                          
+                                        </div>
+                                    </div>
+                                   
+                              
+                                </div>
+                               
+                
+                            </div>
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit" class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

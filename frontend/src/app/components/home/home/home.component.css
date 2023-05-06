@@ -1,0 +1,53 @@
+
+
+.card:hover {
+  /*border : 4px solid rgb(5, 247, 255);*/
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card {
+ border-radius: 10px;
+}
+
+.card-img-top {
+
+  border-radius: 10px 10px 0 0;
+
+}
+
+
+.myContainer {
+
+
+  height:fit-content
+  /*
+  background-color: rgba(0, 0, 0,0.5);
+  width: 100%;
+  height: 100%;*/
+}
+
+.container {
+  
+  padding-top: 5rem;
+  
+
+  
+}
+/* */
+main {
+ 
+  background-image: url("../../../../assets/images/iridium-next-2000px.jpg");
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  width: 100%;
+  height:fit-content
+
+}
+
+
+
+

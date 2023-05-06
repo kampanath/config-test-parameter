@@ -1,0 +1,151 @@
+<div class="content-wrapper" id="mainFrame" *ngIf="mProductArray" style="overflow: hidden;"
+    style="background-color: rgb(175, 191, 206);">
+    <section class="content-header" style="background-color: rgb(215, 222, 228);" style="width: 85%;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-xs-12">
+                    <div class="info-box" (click)="click1()">
+
+                        <span class="info-box-icon bg-info"><i class="fas fa-box-open"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text " style="padding-top: 0.8rem;">Profile</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="info-box" (click)="click2()">
+                        <span class="info-box-icon bg-warning"><i class="fas fa-air-freshener"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text" style="padding-top: 0.8rem;">IMEI</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="info-box" (click)="click3()">
+                        <span class="info-box-icon bg-fuchsia"><i class="fas fa-adjust"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text" style="padding-top: 0.8rem;">SN</span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="info-box" (click)="click4()">
+                        <span class="info-box-icon bg-maroon"><i class="fas fa-anchor"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text" style="padding-top: 0.8rem;">Equipment</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content col-10" id="bgFrame" style="padding-right: 2rem;"
+        style="background-color: rgb(175, 191, 206);">
+        <div class="card" style="width: 50%;" style="background-color: rgb(175, 191, 206);">
+            <div class="card-body" id="divtest">
+
+                <h5 class=" text-white ml-1 col-2" style="background-color: rgb(73, 158, 207);" >Model Config</h5>
+
+                
+               
+                <mat-form-field class="col-2" style="display: inline-block;">
+                    <mat-label>Hardware Type</mat-label>
+                    <mat-select [(value)]="filterSelected" (selectionChange)="selectionChanged($event)">
+                        <mat-option *ngFor="let food of stringArray1" [value]="food">
+                            {{food}}
+                        </mat-option>
+                    </mat-select >
+                </mat-form-field>
+
+                <h6 class=" text-black ml-1 col-2" style="background-color: rgb(73, 158, 207) !important;" style="display: inline-block ;">Table model from mySQL</h6>
+
+                <table class="table table-bordered table-striped table-hover table-sm col-3 " id="table"
+                    style="background-color: rgb(215, 222, 228);">
+                    <thead class="thead" style="background-color: rgb(181, 213, 226);">
+                        <tr>
+                            <th class="text-center">Seq</th>
+                            <th class="text-center">Model Number</th>
+                            <th class="text-center">Model Name</th>
+                            <th class="text-center">Hardware Type</th>
+                            <th class="text-center">KB Kit</th>
+
+                            <th class="text-center">Cal Type</th>
+                            <th class="text-center">SN Type</th>
+                            <th class="text-center">EEPROM Size</th>
+
+                            <th class="text-center">Flash Size</th>
+                            <th class="text-center">Boot Code Ver</th>
+                            <th class="text-center">CP Ver</th>
+                            <th class="text-center">Modem Ver</th>
+                            <th class="text-center">Vocoder</th>
+                            <th class="text-center">EEPROM Ver</th>
+                            <th class="text-center">Model Type</th>
+                            <th class="text-center">Model Select</th>
+
+                            <th class="text-center">Gateway</th>
+                            <th class="text-center">Sequence File</th>
+                            <th class="text-center">Configuration Revision</th>
+
+
+                            <th class="text-center">Hardware Revision</th>
+                            <th class="text-center">Model Indentification</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mProductArray">
+                            <td class="text-center">{{ item.seq }}</td>
+                            <td class="text-center">{{ item.model_No }}</td>
+                            <td class="text-center">{{ item.model_Name }}</td>
+
+                            <td class="text-center">{{ item.hardware_Type }}</td>
+                            <td class="text-center">{{ item.kB_Kit }}</td>
+                            <td class="text-center">{{ item.cal_Type }}</td>
+
+                            <td class="text-center">{{ item.sn_Type }}</td>
+                            <td class="text-center">{{ item.eerroM_Size }}</td>
+                            <td class="text-center">{{ item.flash_Size }}</td>
+
+                            <td class="text-center">{{ item.boot_Code_Ver }}</td>
+                            <td class="text-center">{{ item.cP_Ver }}</td>
+
+                            <td class="text-center">{{ item.modem_Ver }}</td>
+                            <td class="text-center">{{ item.vocoder }}</td>
+                            <td class="text-center">{{ item.eeproM_Ver }}</td>
+
+                            <td class="text-center">{{ item.model_Type }}</td>
+                            <td class="text-center">{{ item.model_Select }}</td>
+                            <td class="text-center">{{ item.gateway }}</td>
+
+
+                            <td class="text-center">{{ item.sequence_File }}</td>
+                            <td class="text-center">{{ item.configuration_Revision }}</td>
+
+
+
+
+                            <td class="text-center">{{ item.hardwarE_VERSION }}</td>
+                            <td class="text-center">{{ item.modeL_INDENTIFICATION }}</td>
+                            <td class="text-center">
+
+                                <img (click)="Add(item.seq)" src="assets/images/image4526.png" class="edit_product">
+                                <img (click)="edit(item.seq)" src="assets/images/ic_edit.png" class="edit_product">
+                                <img (click)="delete(item.seq)" src="assets/images/ic_delete.png" class="edit_product">
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+        </div>
+    </section>
+</div>

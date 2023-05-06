@@ -1,0 +1,57 @@
+
+<div id="mainFrame2" *ngIf="mProductArray" style="overflow: auto;">
+        <BR>
+        <h5 class="titles col-2 text-white ml-1 ml-md-5 " style="font-weight: bold;">Products</h5><BR>
+   
+        <div class="col-6 col-md-4 col-lg-3 col-xl-2 ml-1 ml-md-5 mb-2">
+            <input (keyup)="searchTextChanged.next($event.target.value)" class="form-control input-lg" placeholder="Search With UUT Name">
+        </div>
+
+        <table class="table table-bordered table-striped table-hover ml-1 ml-md-5" id="table">
+            <thead class="thead">
+                <tr>
+                    <th class="text-center align-middle">UUT Name ID</th>
+                    <th class="text-center align-middle">UUT Name</th>
+                    <th class="text-center align-middle">UUT Desc</th>
+                    <th class="text-center align-middle">Model Id</th>
+
+                    <th class="text-center align-middle">Factory Id</th>
+                    <th class="text-center align-middle">Pfs Work St</th>
+                    <th class="text-center align-middle">Pfs Op</th>
+
+                    <th class="text-center align-middle">Cal Require</th>
+                    <th class="text-center align-middle">Cal Cycle</th>
+                    <th class="text-center align-middle">Gold Test Require</th>
+                    <th class="text-center align-middle">Is Active</th>
+                    <th class="text-center align-middle">Action</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of mProductArray">
+                    <td class="text-center">{{ item.uutnameId }}</td>
+                    <td class="text-center">{{ item.uutname }}</td>
+                                <td class="text-center">{{ item.uutdesc }}</td>
+
+                                <td class="text-center">{{ item.modelId }}</td>
+                                <td class="text-center">{{ item.factoryId }}</td>
+                                <td class="text-center">{{ item.pfsWorkSt }}</td>
+
+                                <td class="text-center">{{ item.pfsOp }}</td>
+                                <td class="text-center">{{ item.calrequire }}</td>
+                                <td class="text-center">{{ item.calcycle }}</td>
+
+                                <td class="text-center">{{ item.goldTestRequire }}</td>
+                                <td class="text-center">{{ item.isActive }}</td>
+                                <td class="text-center">
+                                    <img (click)="view(item.uutnameId)" src="assets/images/ic_detail.png" class="edit_product">
+                                    <img (click)="Add(item.uutnameId)" src="assets/images/image4526.png" class="edit_product">
+                                    <img (click)="edit(item.uutnameId)" src="assets/images/ic_edit.png" class="edit_product">
+                                    <img (click)="delete(item.uutnameId)" src="assets/images/ic_delete.png" class="edit_product">
+                                   
+                                </td>
+                </tr>
+            </tbody>
+        </table>
+
+</div>

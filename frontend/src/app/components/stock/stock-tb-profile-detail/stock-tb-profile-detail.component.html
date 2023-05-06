@@ -1,0 +1,95 @@
+<div class="content-wrapperww" *ngIf="mProductArray">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-box-open"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Stock</span>
+                            <span class="info-box-number">{{7777}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-warning"><i class="fas fa-exclamation-triangle"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Defect</span>
+                            <span class="info-box-number">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-maroon"><i class="fas fa-minus-circle"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Sold out</span>
+                            <span class="info-box-number">{{getOutOfStock()}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                <div class="row card-body-header">
+                    <div class="col-5">
+                        <input class="form-control input-lg" placeholder="Enter search keyword">
+                    </div>
+                    <div class="col-7">
+                        <a [routerLink]="['/stock/ird-create']" class="btn btn-success float-right btn-add">เพิ่มlllllll</a>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Profile Detail ID</th>
+                            <th>Profile ID</th>
+                            <th>Detail Sq No</th>
+                            <th>Detail Test Name</th>
+                            <th>Detail Desc</th>
+                            <th>Detail LSL</th>
+                            <th>Detail USL</th>
+                            <th>Detail UOM</th>
+                            <th>Detail Req Section</th>
+
+                            <th>Detail Category</th>
+                            <th>Detail Option</th>
+                            <th>Detail CMA Option</th>
+                            <th>Detail DEBUG Option</th>
+                            <th>Is Active</th>
+                            <th class="text-center">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mProductArray">
+                            <td class="text-center">{{ item.profiledetailId    }}</td>
+                            <td>{{ item.profileId}}</td>
+                            <td>{{ item.detailSqNo}}</td>
+                            <td>{{ item.detailTestName}}</td>
+                            <td>{{ item.detailDesc}}</td>
+                            <td>{{ item.detailLsl}}</td>
+                            <td>{{ item.detailUsl }}</td>
+                            <td>{{ item.detailUom}}</td>
+                            <td>{{ item.detailReqSection}}</td>
+
+                            <td>{{ item.detailCategory}}</td>
+                            <td>{{ item.detailOption}}</td>
+                            <td>{{ item.detailCmaoption }}</td>
+                            <td>{{ item.detailDebugoption}}</td>
+                            <td>{{ item.isActive}}</td>
+                            <td class="text-center">
+                                <img (click)="Add(item.profiledetailId)" src="assets/images/image4526.png" class="edit_product">
+                                <img (click)="edit(item.profiledetailId)" src="assets/images/ic_edit.png" class="edit_product">
+                                <img (click)="delete(item.profiledetailId)" src="assets/images/ic_delete.png" class="delete_product">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

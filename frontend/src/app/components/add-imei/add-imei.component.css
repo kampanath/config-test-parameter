@@ -1,0 +1,104 @@
+
+.table {
+    table-layout: fixed;
+   
+}
+
+#statusText{
+  height: 500px;
+ background-color: rgb(18, 81, 153);
+ color: aqua;
+ resize: horizontal;
+ overflow: scroll;
+ font-size: 1rem;
+
+}
+
+#configData{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+  thead>tr>th {
+    vertical-align: middle;
+    height:100px;
+    
+  }
+
+  thead>tr>th:nth-child(3)  {
+    width: 150px;
+  }
+
+  thead>tr>th:nth-child(4)  {
+    width: 150px;
+  }
+
+  thead>tr>th:nth-child(11)  {
+    width: 200px;
+  }
+
+  thead>tr>th:nth-child(12)  {
+    width: 300px;
+  }
+
+  thead>tr>th:nth-child(15)  {
+    width: 150px;
+  }
+  
+
+  .edit_product,
+  .delete_product {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .edit_product{
+    margin-left: 10px;
+  }
+  
+  .delete_product{
+    margin-left: 10px;
+  }
+  
+  .product_image {
+    max-width: 50px;
+    margin-right: 12px;
+  }
+  
+  .product_name {
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .content-header{
+    padding-bottom: 0;
+  }
+  
+  table td{
+    vertical-align: unset;
+  }
+
+ 
+  
+  .btn-add{
+    width: 80px;
+  }
+  
+  .card-body-header{
+    margin-bottom: 20px;
+  }
+
+  #bgFrame{
+
+  
+    width: 100%; 
+
+  }
+
+  #mainFrame{
+    width: 100%; 
+
+  }

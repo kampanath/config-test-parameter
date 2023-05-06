@@ -1,0 +1,69 @@
+<div class="content-wrapper" *ngIf="mProductArray">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info"><i class="fas fa-box-open"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Stock</span>
+                            <span class="info-box-number">{{7777}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-warning"><i class="fas fa-exclamation-triangle"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Defect</span>
+                            <span class="info-box-number">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-maroon"><i class="fas fa-minus-circle"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Sold out</span>
+                            <span class="info-box-number">{{getOutOfStock()}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                <div class="row card-body-header">
+                    <div class="col-5">
+                        <input class="form-control input-lg" placeholder="Enter search keyword">
+                    </div>
+                    <div class="col-7">
+                        <a [routerLink]="['/stock/ird-create']" class="btn btn-success float-right btn-add">เพิ่มlllllll</a>
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <td *ngFor="let item of mProductArrayName2">
+                           
+                            {{item}}
+                        </td>
+                        <td class="text-center">ACTION</td>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of mProductArray">
+                            <td class="text-center">{{item.uutstatusTypeId}}</td>
+                            <td>{{ item.uutstatusTypeName}}</td>
+                            <td>{{ item.uutstatusTypeDesc}}</td>
+                            <td class="text-center">
+                                <img (click)="edit(item.uutstatusTypeId)" src="assets/images/ic_edit.png" class="edit_product">
+                                <img (click)="delete(item.uutstatusTypeId)" src="assets/images/ic_delete.png" class="delete_product">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

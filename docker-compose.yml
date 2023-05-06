@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  backend:
+    build: backend/
+    image: backend:1.4
+    container_name: backend
+    ports:
+      - 1151:81
+    networks:
+      - mynetwork
+  frontend:
+    build: frontend/
+    image: frontend:1.4
+    container_name: frontend
+    ports:
+      - 1152:81
+    depends_on:
+      - backend
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    name: pos_workshop
+    driver: bridge
+

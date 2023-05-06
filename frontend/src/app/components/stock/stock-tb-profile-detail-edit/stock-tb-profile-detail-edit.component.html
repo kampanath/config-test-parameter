@@ -1,0 +1,158 @@
+<div class="content-wrapper bg-transparent mt-5" >
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary"  >
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Edit Profile Detail</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile Detail ID</label>
+                                            <input [(ngModel)]="mProduct.profiledetailId" type="number"
+                                                class="form-control" name="profiledetailId" disabled>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Profile ID</label>
+                                            <input [(ngModel)]="mProduct.profileId" type="number" class="form-control"
+                                                name="profileId" disabled>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Sq No</label>
+                                            <input [(ngModel)]="mProduct.detailSqNo" type="number" class="form-control"
+                                                name="detailSqNo">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Test Name</label>
+                                            <input [(ngModel)]="mProduct.detailTestName" type="text"
+                                                class="form-control" name="detailTestName">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Desc</label>
+                                            <input [(ngModel)]="mProduct.detailDesc" type="text" class="form-control"
+                                                name="detailDesc">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Lsl</label>
+                                            <input [(ngModel)]="mProduct.detailLsl" type="number" class="form-control"
+                                                name="detailLsl">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Usl</label>
+                                            <input [(ngModel)]="mProduct.detailUsl" type="number" class="form-control"
+                                                name="detailUsl">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Uom</label>
+                                            <input [(ngModel)]="mProduct.detailUom" type="text" class="form-control"
+                                                name="detailUom" ngModel maxlength="25">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Req Section</label>
+                                            <input [(ngModel)]="mProduct.detailReqSection" type="text"
+                                                class="form-control" name="detailReqSection" ngModel maxlength="25">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4 ">
+                                        <div class="form-group">
+                                            <label>Detail Category</label>
+                                            <input [(ngModel)]="mProduct.detailCategory" type="text"
+                                                class="form-control" name="detailCategory">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 ">
+                                        <div class="form-group">
+                                            <label>Detail Option</label>
+                                            <input [(ngModel)]="mProduct.detailOption" type="text" class="form-control"
+                                                name="detailOption">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group">
+                                            <label>Detail Cma Option</label>
+                                            <input [(ngModel)]="mProduct.detailCmaoption" type="text"
+                                                class="form-control" name="detailCmaoption" ngModel maxlength="10">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Detail Debug Option</label>
+                                            <input [(ngModel)]="mProduct.detailDebugoption" type="text"
+                                                class="form-control" name="detailDebugoption" ngModel maxlength="10">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Is Active</label>
+                                            <input [(ngModel)]="mProduct.isActive" type="text" class="form-control"
+                                                name="isActive">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

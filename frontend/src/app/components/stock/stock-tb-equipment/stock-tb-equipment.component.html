@@ -1,0 +1,75 @@
+<div id="mainFrame2" *ngIf="mProductArray" style="overflow: hidden;">
+    <div class="container col-12">
+      
+
+        <BR>
+            <h5 class="text-white ml-1 col-12" style="font-weight: bold;">Common Equipment</h5><BR>
+        
+                <div class="col-6 col-md-3">
+                    <input (keyup)="searchTextChanged.next($event.target.value)" class="form-control input-lg"
+                        placeholder="Search By Name">
+                </div>
+        
+        
+
+          
+            <table class="table table-bordered table-striped table-hover mt-2">
+                <thead class="thead">
+                    <tr>
+                        <th class="text-center align-middle">ID</th>
+                        <th class="text-center align-middle">Name</th>
+                        <th class="text-center align-middle">manufacturing</th>
+                        <th class="text-center align-middle">Model</th>
+
+                        <th class="text-center align-middle">Model No.</th>
+                        <th class="text-center align-middle">Serial No.</th>
+                        <th class="text-center align-middle">Device ID</th>
+
+                        <th class="text-center align-middle">Ird asset No.</th>
+                        <th class="text-center align-middle">Is Cal</th>
+                        <th class="text-center align-middle">Cal Due Date</th>
+                        <th class="text-center align-middle">Station ID</th>
+                        <th class="text-center align-middle">Owner</th>
+                        <th class="text-center align-middle">Is Active</th>
+                        <th class="text-center align-middle">Remark</th>
+                        <th class="text-center align-middle">Action</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+        
+                    <tr *ngFor="let item of mProductArray">
+                        <td class="text-center align-middle">{{ item.equipId }}</td>
+                        <td class="text-center align-middle">{{ item.equipName }}</td>
+                        <td class="text-center align-middle">{{ item.equipManufact }}</td>
+
+                        <td class="text-center align-middle">{{ item.equipModel }}</td>
+                        <td class="text-center align-middle">{{ item.equipModelNo }}</td>
+                        <td class="text-center align-middle">{{ item.equipSerialNo }}</td>
+
+                        <td class="text-center align-middle">{{ item.equipDeviceId }}</td>
+                        <td class="text-center align-middle">{{ item.equipIrdassetNo }}</td>
+                        <td class="text-center align-middle">{{ item.equipIsCal }}</td>
+
+                        <td class="text-center align-middle">{{ item.equipCaldue }}</td>
+                        <td class="text-center align-middle">{{ item.stationId }}</td>
+
+                        <td class="text-center align-middle">{{ item.equipOwner }}</td>
+                        <td class="text-center align-middle">{{ item.isActive }}</td>
+                        <td class="text-center align-middle">{{ item.remark }}</td>
+                        <td class="text-center align-middle">
+
+                            <img (click)="Add(item.equipId)" src="assets/images/image4526.png" class="edit_product">
+                            <img (click)="edit(item.equipId)" src="assets/images/ic_edit.png" class="edit_product">
+                            <img (click)="delete(item.equipId)" src="assets/images/ic_delete.png" class="edit_product">
+
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+       
+</div>
+
+</div>
+

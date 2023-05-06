@@ -1,0 +1,142 @@
+<div class="content-wrapper bg-transparent mt-5" >
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card card-primary"  >
+                        <form role="form" style="background-color: rgb(215, 222, 228);">
+                            <h5 class="p-3 text-white " style="background-color: rgb(6, 79, 121);">Edit Equipment</h5>
+                            <div class="card-body" >
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>ID</label>
+                                            <input [(ngModel)]="mProduct.equipId" type="number" class="form-control" name="ID" disabled>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input [(ngModel)]="mProduct.equipName" type="text" class="form-control" name="Name">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Manufacturing</label>
+                                            <input [(ngModel)]="mProduct.equipManufact" type="text" class="form-control" name="Manufacturing" >
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                             
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Model</label>
+                                            <input [(ngModel)]="mProduct.equipModel" type="text" class="form-control" name="Model">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Model No.</label>
+                                            <input [(ngModel)]="mProduct.equipModelNo" type="text" class="form-control" name="Model No." ngModel maxlength="25">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Serial No.</label>
+                                            <input [(ngModel)]="mProduct.equipSerialNo" type="text" class="form-control" name="Serial No.">
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                              
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Device ID</label>
+                                            <input [(ngModel)]="mProduct.equipDeviceId" type="text" class="form-control" name="Device ID" ngModel maxlength="25">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>IRD Asset No.</label>
+                                            <input [(ngModel)]="mProduct.equipIrdassetNo" type="text" class="form-control" name="IRD Asset No." ngModel maxlength="10">
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Is Cal</label>
+                                            <input [(ngModel)]="mProduct.equipIsCal" type="text" class="form-control" name="Is Cal">
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                          
+                             
+                             
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Station ID</label>
+                                            <input [(ngModel)]="mProduct.stationId" type="text" class="form-control" name="Station ID">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="md-form">
+                                            <label  for="input">Cal Due Date</label>
+                                            <input (input)="textChanged($event)"  type="date" id="input" class="form-control" #pRef  mdbInput>
+                                            
+                                          </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Owner</label>
+                                            <input [(ngModel)]="mProduct.equipOwner" type="text" class="form-control" name="Owner">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                              
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Is Active</label>
+                                            <input [(ngModel)]="mProduct.isActive" type="text" class="form-control" name="Is Active">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Remark</label>
+                                            <input [(ngModel)]="mProduct.remark" type="text" class="form-control" name="Remark">
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+
+                            <div class="card-footer">
+                                <button (click)="submit()" type="submit"
+                                    class="btn btn-primary float-right">Submit</button>
+                                <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

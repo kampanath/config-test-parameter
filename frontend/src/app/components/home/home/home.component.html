@@ -1,0 +1,236 @@
+<main>
+  <div class="myContainer">
+    <div class="container">
+        <div class="card-columns">
+
+
+           
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/non-ATE.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">Products</h2>
+                        <BR>
+                        <div class="card-text">
+                          Add, edit details, delete product. Manage test profile for product.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/stock/TbUutname']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+          
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/ate_profile.jpg" />
+                    <div class="card-body">
+                        <h2 class="card-title">ATE Profile</h2>
+                        <BR>
+                        <div class="card-text">
+                          Manage profile for each ATE station, edit or upload config data.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/ProfileATE']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+           
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/Calibration.jpg" />
+                    <div class="card-body">
+                        <h2 class="card-title">ATE Calibration</h2>
+                        <BR>
+                        <div class="card-text">
+                            Check every calibration date/time for each test staion and test fixture.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/ATECalibration']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+           
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/eq1.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">ATE Equipment</h2>
+                        <BR>
+                        <div class="card-text">
+                            Manage details for equipment that used specific for each test station, check calibration date.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/EquipmentCal']" routerLinkActive="active">Select</a>
+
+                    </div>
+                </div>
+          
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/common_eq1.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">Common Equipment</h2>
+                        <BR>
+                        <div class="card-text">
+                            Manage details for equipment that can used in common for all test station.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/stock/tbEquipment']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+             
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/imei1.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">SN and IMEI</h2>
+                        <BR>
+                        <div class="card-text">
+                            Search for serial number or IMEI, upload new IMEI from file.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/IMEI/Product']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+           
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/gold.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">Gold Boards</h2>
+                        <BR>
+                        <div class="card-text">
+                            See all gold board, its serial number and product.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/goldBoard']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+            </div>
+
+        
+     
+
+    </div>
+</div>
+</main>
+
+
+<!--
+
+<main>
+  <div class="myContainer">
+
+  
+    <div class="container col-10">
+        <div class="row g-3">
+
+
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/non-ATE.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">Products</h2>
+                        <BR>
+                        <div class="card-text">
+                          Add, edit details, delete product. Manage test profile for product.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/stock/TbUutname']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/ate_profile.jpg" />
+                    <div class="card-body">
+                        <h2 class="card-title">ATE Profile</h2>
+                        <BR>
+                        <div class="card-text">
+                          Manage profile for each ATE station, edit or upload config data.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/ProfileATE']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/Calibration.jpg" />
+                    <div class="card-body">
+                        <h2 class="card-title">ATE Calibration</h2>
+                        <BR>
+                        <div class="card-text">
+                            Check every calibration date/time for each test staion and test fixture.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/ATECalibration']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/eq1.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">ATE Equipment</h2>
+                        <BR>
+                        <div class="card-text">
+                            Manage details for equipment that used specific for each test station, check calibration date.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/EquipmentCal']" routerLinkActive="active">Select</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/common_eq1.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">Common Equipment</h2>
+                        <BR>
+                        <div class="card-text">
+                            Manage details for equipment that can used in common for all test station.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/stock/tbEquipment']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+              </div>
+         
+
+
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/imei1.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">SN and IMEI</h2>
+                        <BR>
+                        <div class="card-text">
+                            Search for serial number or IMEI, upload new IMEI from file.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/IMEI/Product']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+            </div>
+         
+              <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/gold.png" />
+                    <div class="card-body">
+                        <h2 class="card-title">Gold Boards</h2>
+                        <BR>
+                        <div class="card-text">
+                            See all gold board, its serial number and product.
+                        </div>
+                        <BR>
+                        <a class="btn btn-primary" [routerLink]="['/goldBoard']" routerLinkActive="active">Select</a>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+        
+
+
+
+    </div>
+</div>
+</main>
+
+
+-->
